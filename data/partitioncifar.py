@@ -487,7 +487,7 @@ class RandSplitCIFAR100:
         # perm = np.random.permutation(100)
         perm = np.arange(args.total_cls)
         print(perm)
-        print("RScifar100")
+        print("RScifar100-------------------------------------------")
         splits = [
             (
                 partition_datasetv4(train_dataset, perm[num_cls * i:num_cls * (i+1)]),
@@ -815,7 +815,7 @@ class RandSplitCIFAR10CSI:
         # perm = np.random.permutation(100)
         perm = np.arange(args.total_cls)
         print(perm)
-        print("RScifar100csi")
+        print("RScifar100csi----------------------------------")
 
         splits = [
             (
