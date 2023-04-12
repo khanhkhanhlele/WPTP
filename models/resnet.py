@@ -8,7 +8,6 @@ import torch.nn.functional as F
 class BasicBlock(nn.Module):
     M = 2
     expansion = 1
-    print("renet>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     def __init__(
         self, builder, inplanes, planes, stride=1, downsample=None, base_width=64
     ):

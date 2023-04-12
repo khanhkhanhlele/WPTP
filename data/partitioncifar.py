@@ -889,7 +889,7 @@ class RandSplitCIFAR100CSI:
         np.random.seed(args.seed)
         perm = np.arange(args.total_cls)
         print(perm)
-
+        print("cifar______________________")
         splits = [
             (
                 partition_datasetv4_csi(train_dataset, perm[num_cls * i:num_cls * (i+1)], train=True, cal=False, val=False, prop=0.9) if args.validation \

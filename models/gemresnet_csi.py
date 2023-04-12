@@ -78,7 +78,7 @@ class RN(BaseModel):
 
 def GEMResNet18CSI():
     if args.dataset == 'cifar100' or args.dataset == 'timgnet':
-        return RN(BasicBlock, [2, 2, 2, 2], args.output_size, nf=int(args.width_mult * 128))
+        return RN(BasicBlock, [2, 2, 2, 2], args.output_size, nf=int(args.width_mult * 64))
     elif args.dataset == 'cifar10':
         return RN(BasicBlock, [2, 2, 2, 2], args.output_size, nf=int(args.width_mult * 64))
     else:
