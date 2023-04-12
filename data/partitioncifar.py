@@ -455,8 +455,10 @@ class RandSplitCIFAR100:
 
         use_cuda = torch.cuda.is_available()
 
-        args.mean = (0.491, 0.482, 0.447)
-        args.std = (0.247, 0.243, 0.262)
+        # args.mean = (0.491, 0.482, 0.447)
+        # args.std = (0.247, 0.243, 0.262)
+        args.mean = (0.5071, 0.4867, 0.4408)
+        args.std = (0.2675, 0.2565, 0.2761)
         normalize = transforms.Normalize(
             mean=args.mean, std=args.std
         )
@@ -485,7 +487,7 @@ class RandSplitCIFAR100:
         # perm = np.random.permutation(100)
         perm = np.arange(args.total_cls)
         print(perm)
-
+        print("RScifar100")
         splits = [
             (
                 partition_datasetv4(train_dataset, perm[num_cls * i:num_cls * (i+1)]),
@@ -813,6 +815,7 @@ class RandSplitCIFAR10CSI:
         # perm = np.random.permutation(100)
         perm = np.arange(args.total_cls)
         print(perm)
+        print("RScifar100csi")
 
         splits = [
             (

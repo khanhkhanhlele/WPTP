@@ -3,6 +3,7 @@ import torch.nn as nn
 from .builder import Builder
 from args import args
 
+import torch.nn.functional as F
 # BasicBlock {{{
 class BasicBlock(nn.Module):
     M = 2
@@ -107,7 +108,8 @@ class ResNet(nn.Module):
         if self.base_width // 64 > 1:
             print(f"==> Using {self.base_width // 64}x wide model")
 
-        self.conv1 = builder.conv7x7(3, 64, stride=2, first_layer=True)
+       #self.conv1 = builder.conv7x7(3, 64, stride=2, first_layer=True)
+        self.conv1 = builder.conv3x3(3, 64, stride=1, first_layer=True)
 
         self.bn1 = builder.batchnorm(64)
         self.relu = builder.activation()
@@ -160,14 +162,15 @@ class ResNet(nn.Module):
         if self.bn1 is not None:
             x = self.bn1(x)
         x = self.relu(x)
-        x = self.maxpool(x)
+        #x = self.maxpool(x)
 
         x = self.layer1(x)
         x = self.layer2(x)
         x = self.layer3(x)
         x = self.layer4(x)
 
-        x = self.avgpool(x)
+        #x = self.avgpool(x)
+        x = F.avg_pool2d(x, x.shape[2])
         x = self.fc(x)
         x = x.view(x.size(0), -1)
 
