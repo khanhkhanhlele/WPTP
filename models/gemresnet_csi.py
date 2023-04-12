@@ -19,7 +19,7 @@ def conv3x3(in_planes, out_planes, builder, stride=1):
 
 class BasicBlock(nn.Module):
     expansion = 1
-
+    print("gemresnet_csi***************************************")
     def __init__(self, in_planes, planes, builder, stride=1):
         super(BasicBlock, self).__init__()
         self.conv1 = conv3x3(in_planes, planes, builder, stride)
