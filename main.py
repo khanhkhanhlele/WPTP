@@ -119,8 +119,6 @@ def main():
 
     # Get the model.
     model = utils.get_model()
-    print(args.optimizer)
-    print("9999999999999999999999999999999999999999999999999999999")
 
     # If necessary, set the sparsity of the model of the model using the ER sparsity budget (see paper).
     if args.er_sparsity:
@@ -268,8 +266,6 @@ def main():
             optimizer = optim.SGD(
                 params, lr=lr, momentum=args.momentum, weight_decay=args.wd
             )
-        print(args.optimizer)
-        print("1111111111111111111111111111111111111111111111111111111111")
         train_epochs = args.epochs
 
         if args.no_scheduler:
