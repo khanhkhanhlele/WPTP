@@ -47,16 +47,16 @@ def parse_arguments():
     parser.add_argument(
         "--momentum",
         type=float,
-        default=0.9,
+        default=0,
         metavar="M",
-        help="Momentum (default: 0.9)",
+        help="Momentum (default: 0.9 change to 0)",
     )
     parser.add_argument(
         "--wd",
         type=float,
-        default=0.0001,
+        default=0,
         metavar="M",
-        help="Weight decay (default: 0.0001)",
+        help="Weight decay (default: 0.0001 change to 0)",
     )
 
     parser.add_argument(
