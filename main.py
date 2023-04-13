@@ -65,7 +65,7 @@ def main():
     if not run_base_dir.exists():
         os.makedirs(run_base_dir)
 
-    (run_base_dir / "settings.txt").write_text(str(args))
+    #(run_base_dir / "settings.txt").write_text(str(args))
     args.run_base_dir = run_base_dir
 
     args.n_tasks = args.num_tasks
