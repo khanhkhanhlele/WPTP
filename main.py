@@ -119,7 +119,7 @@ def main():
 
     # Get the model.
     model = utils.get_model()
-    print(model.optimizer)
+    print(args.optimizer)
     print("9999999999999999999999999999999999999999999999999999999")
 
     # If necessary, set the sparsity of the model of the model using the ER sparsity budget (see paper).
