@@ -56,7 +56,7 @@ def main():
     parser.add_argument('--name', default=None, type=str) # e.g. --name cifar10_supsup, then files are saved under 'args.log_dir/cifar10_supsup'
     parser.add_argument('--round', default=0, type=int)
     parser.add_argument('--log_dir', default='runs/rn18-supsup', type=str)
-    parser.add_argument('--epochs', default=250, type=int)
+    parser.add_argument('--epochs', default=100, type=int)
     parser.add_argument('--load_path', type=str, default=None, help='model dir to load')
     parser.add_argument('--resume_task', type=int, default=None)
     parser.add_argument('--print_filename', type=str, default='result.txt')
