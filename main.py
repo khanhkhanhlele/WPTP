@@ -447,7 +447,7 @@ def main():
                 for epoch in range(args.cal_epochs * len(cali_loaders[0])):
                     output_list, label_list = [], []
                     for t_loader, loader in enumerate(cali_loaders):
-                        images, labels = iter(loader).next()
+                        images, labels = iter(loader).__next__()
                         images, labels = images.to(device), labels.to(device)
                         labels = num_cls * t_loader + labels
 
