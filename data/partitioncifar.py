@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import torch
-
+memo_buff = 5
 from torchvision import datasets, transforms
 
 import copy
@@ -676,10 +676,10 @@ def partition_datasetv4_csi(dataset, perm, train=True, cal=False, val=False, pro
                 train_idx_list.append(idx)
 
             if cal:
-                train_idx_list[-1] = train_idx_list[-1][-20:]
+                train_idx_list[-1] = train_idx_list[-1][-memo_buff:]
             else:
-                train_idx_list[-1] = train_idx_list[-1][:-20]
-
+                train_idx_list[-1] = train_idx_list[-1][:-memo_buff]
+###############################################################################################################
         if val:
             final_idx = np.concatenate(val_idx_list).astype(int)
         else:
@@ -814,8 +814,6 @@ class RandSplitCIFAR10CSI:
         np.random.seed(args.seed)
         # perm = np.random.permutation(100)
         perm = np.arange(args.total_cls)
-        print(perm)
-        print("RScifar100csi----------------------------------")
 
         splits = [
             (
