@@ -6,7 +6,7 @@ log_dir: REPLACE
 
 # Dataset setup
 data: /path/to/dataset/parent
-set: RandSplitCIFAR10CSI
+set: RandSplitCIFAR100CSI
 num_tasks: 5
 
 # Model setup
@@ -14,8 +14,8 @@ model: GEMResNet18CSI
 conv_type: MultitaskMaskConv
 bn_type: MultitaskNonAffineBN
 conv_init: signed_constant
-output_size: 2
-total_cls: 10
+output_size: 20
+total_cls: 100
 er_sparsity: True
 sparsity: REPLACE
 
