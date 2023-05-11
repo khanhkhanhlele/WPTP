@@ -20,7 +20,7 @@ er_sparsity: True
 sparsity: REPLACE
 
 # Optimizer setup
-optimizer: sgd
+optimizer: sgda
 epochs: 100
 lr: 0.1
 batch_size: 128
